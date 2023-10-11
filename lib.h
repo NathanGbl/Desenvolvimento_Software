@@ -3,8 +3,8 @@
 typedef struct {
   char nome[101];
   char cpf[12];
-  char tipo_conta[6];
-  float valor_inicial;
+  char tipo_conta[2];
+  float saldo;
   char senha[101];
 } cliente;
 
@@ -13,6 +13,8 @@ typedef struct {
   int qtnd;
 } lista_clientes;
 
-int menu();
+void menu(int *opcao);
 
-void novo_cliente();
+void novo_cliente(lista_clientes *lc);
+
+void listar_clientes(lista_clientes *lc);

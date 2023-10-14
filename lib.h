@@ -2,8 +2,8 @@
 
 typedef struct {
   char nome[101];
-  char cpf[12];
-  char tipo_conta[2];
+  char cpf[50];
+  char tipo_conta[50];
   float saldo;
   char senha[101];
 } cliente;
@@ -16,5 +16,7 @@ typedef struct {
 void menu(int *opcao);
 
 void novo_cliente(lista_clientes *lc);
+
+void apagar_cliente(lista_clientes *lc);
 
 void listar_clientes(lista_clientes *lc);

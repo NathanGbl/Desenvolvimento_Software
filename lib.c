@@ -16,6 +16,7 @@ void menu(int *opcao) {
   printf("0. Sair\n");
   printf("Opção: ");
   scanf("%d", opcao);
+  scanf("");
   
 }
 
@@ -23,45 +24,45 @@ void novo_cliente(lista_clientes *lc) {
 
   cliente cliente;
   char nome[101];
-  char cpf[12];
-  char tipo_conta[2];
-  float saldo = 0;
-  char senha[50];
+  char cpf[50];
+  char tipo_conta[50];
+  float saldo;
+  char senha[101];
   
   int tamanho_cpf = 0;
   int tamanho_tipo_conta = 0;
   
   printf("\tDigite o nome do cliente: ");
-  scanf("%c", nome);
+  scanf("%s", nome);
   printf("\n");
   
   printf("\tDigite CPF: ");
-  scanf("%c", cpf);
+  scanf("%s", cpf);
   printf("\n");
   
   printf("\tDigite o tipo de conta (c para comum ou p para plus): ");
-  scanf(" %c", tipo_conta);
+  scanf(" %s", tipo_conta);
   printf("\n");
 
   printf("\tDigite o saldo inicial da conta: ");
-  scanf("%f", saldo);
+  scanf("%f", &saldo);
   printf("\n");
 
   printf("\tDigite a senha da conta: ");
-  scanf("%c", senha);
+  scanf("%s", senha);
   printf("\n");
 
-  for (int x; cpf[x] != '\0'; x++) {
-    tamanho_cpf++;
-  }
+  // for (int x; cpf[x] != '\0'; x++) {
+  //   tamanho_cpf++;
+  // }
 
-  for (int x; tipo_conta[x] != '\0'; x++) {
-    tamanho_tipo_conta++;
-  }
+  // for (int x; tipo_conta[x] != '\0'; x++) {
+  //   tamanho_tipo_conta++;
+  // }
 
-  if (tamanho_cpf != 11 || tamanho_tipo_conta != 2 ) {
-    printf("\tDados inválidos.");
-  }
+  // if (tamanho_cpf != 11 || tamanho_tipo_conta != 2 ) {
+  //   printf("\tDados inválidos.");
+  // }
 
   strcpy(cliente.nome, nome);
   strcpy(cliente.cpf, cpf);
@@ -76,6 +77,28 @@ void novo_cliente(lista_clientes *lc) {
   
 }
 
+void apagar_cliente(lista_clientes *lc) {
+  
+  char cpf_apagado[12];
+  scanf("%c", cpf_apagado);
+
+  for (int x; x < lc->qtnd; x++) {
+    if (strcmp(lc->cliente[x].cpf, cpf_apagado) == 0) {
+      for (; x < lc->qtnd; x++) {
+        strcpy(lc->cliente[x].nome, lc->cliente[x + 1].nome);
+        strcpy(lc->cliente[x].cpf, lc->cliente[x + 1].cpf);
+        strcpy(lc->cliente[x].tipo_conta, lc->cliente[x + 1].tipo_conta);
+        lc->cliente[x].saldo = lc->cliente[x + 1].saldo;
+        strcpy(lc->cliente[x].senha, lc->cliente[x + 1].senha);
+      }
+      lc->qtnd -= 1;
+    }
+    break;
+  }
+  printf("\tCliente apagado com sucesso!");
+  
+}
+
 void listar_clientes(lista_clientes *lc) {
 
   for (int x; x < lc->qtnd; x++) {
@@ -85,4 +108,5 @@ void listar_clientes(lista_clientes *lc) {
     printf("\tSaldo: %f", lc->cliente[x].saldo);
     printf("\tSenha: %s", lc->cliente[x].senha);
   }
+  
 }

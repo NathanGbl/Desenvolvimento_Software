@@ -72,17 +72,3 @@ void novo_cliente(lista_clientes *lc) {
   
 }
 
-
-void listar_clientes(lista_clientes *lc) {
-
-  for (int x = 0; x < lc->qtnd; x++) {
-    printf("\tCliente %d\n", x);
-    printf("\t\tNome: %s\n", lc->cliente[x].nome);
-    printf("\t\tCPF: %s\n", lc->cliente[x].cpf);
-    printf("\t\tTipo de conta: %s\n", lc->cliente[x].tipo_conta);
-    printf("\t\tSaldo: R$%.2f\n", lc->cliente[x].saldo);
-    printf("\t\tSenha: %s\n\n", lc->cliente[x].senha);
-  }
-  
-}
-

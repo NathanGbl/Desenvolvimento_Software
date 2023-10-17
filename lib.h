@@ -17,7 +17,4 @@ void menu(int *opcao);
 
 void novo_cliente(lista_clientes *lc);
 
-
-
-void debito(lista_clientes *lc);
-
+void deposito(lista_clientes *lc);

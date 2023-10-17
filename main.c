@@ -15,9 +15,9 @@ int main() {
       case 1:
         novo_cliente(&lc);
         break;
-      case 4:
-        debito(&lc);
-      break;
+      case 5:
+        deposito(&lc);
+        break;
     }
   } while (opcao != 0);
   

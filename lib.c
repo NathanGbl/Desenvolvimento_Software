@@ -72,3 +72,32 @@ void novo_cliente(lista_clientes *lc) {
   
 }
 
+void apagar_cliente(lista_clientes *lc) {
+  
+  char cpf_apagado[50];
+  int x = 0;
+  int find = 0;
+
+  printf("CPF a ser apagado: ");
+  scanf("%s", cpf_apagado);
+
+  for (; x < lc->qtnd; x++) {
+    if (strcmp(lc->cliente[x].cpf, cpf_apagado) == 0) {
+      for (; x < lc->qtnd; x++) {
+        strcpy(lc->cliente[x].nome, lc->cliente[x + 1].nome);
+        strcpy(lc->cliente[x].cpf, lc->cliente[x + 1].cpf);
+        strcpy(lc->cliente[x].tipo_conta, lc->cliente[x + 1].tipo_conta);
+        lc->cliente[x].saldo = lc->cliente[x + 1].saldo;
+        strcpy(lc->cliente[x].senha, lc->cliente[x + 1].senha);
+      }
+      find = 1;
+      lc->qtnd -= 1;
+      printf("\tCliente apagado com sucesso!\n\n");
+    }
+    break;
+  }
+  if (find == 0) {
+    printf("\tCPF incorreto!\n\n");
+  }
+}
+

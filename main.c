@@ -5,6 +5,7 @@ int main() {
   
   int opcao;
   lista_clientes lc;
+  operacoes op;
   lc.qtnd = 0;
   do {
     menu(&opcao);
@@ -13,10 +14,13 @@ int main() {
     }
     switch(opcao) {
       case 1:
-        novo_cliente(&lc);
+        novo_cliente(&lc, &op);
         break;
       case 5:
-        deposito(&lc);
+        deposito(&lc, &op);
+        break;
+      case 6:
+        extrato(&lc, &op);
         break;
     }
   } while (opcao != 0);

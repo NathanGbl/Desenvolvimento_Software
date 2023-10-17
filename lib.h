@@ -17,5 +17,7 @@ void menu(int *opcao);
 
 void novo_cliente(lista_clientes *lc);
 
-void apagar_cliente(lista_clientes *lc);
+
+
+void listar_clientes(lista_clientes *lc);
 

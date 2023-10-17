@@ -15,8 +15,8 @@ int main() {
       case 1:
         novo_cliente(&lc);
         break;
-      case 2:
-        apagar_cliente(&lc);
+      case 3:
+        listar_clientes(&lc);
         break;
     }
   } while (opcao != 0);

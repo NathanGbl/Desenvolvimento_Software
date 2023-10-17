@@ -16,7 +16,6 @@ void menu(int *opcao) {
   printf("0. Sair\n");
   printf("Opção: ");
   scanf("%d", opcao);
-  scanf("");
   
 }
 
@@ -41,7 +40,7 @@ void novo_cliente(lista_clientes *lc) {
   printf("\n");
   
   printf("\tDigite o tipo de conta (c para comum ou p para plus): ");
-  scanf(" %s", tipo_conta);
+  scanf("%s", tipo_conta);
   printf("\n");
 
   printf("\tDigite o saldo inicial da conta: ");
@@ -52,61 +51,24 @@ void novo_cliente(lista_clientes *lc) {
   scanf("%s", senha);
   printf("\n");
 
-  // for (int x; cpf[x] != '\0'; x++) {
-  //   tamanho_cpf++;
-  // }
+  tamanho_cpf = strlen(cpf);
+  tamanho_tipo_conta = strlen(tipo_conta);
 
-  // for (int x; tipo_conta[x] != '\0'; x++) {
-  //   tamanho_tipo_conta++;
-  // }
-
-  // if (tamanho_cpf != 11 || tamanho_tipo_conta != 2 ) {
-  //   printf("\tDados inválidos.");
-  // }
-
-  strcpy(cliente.nome, nome);
-  strcpy(cliente.cpf, cpf);
-  strcpy(cliente.tipo_conta, tipo_conta);
-  cliente.saldo = saldo;
-  strcpy(cliente.senha, senha);
-
-  lc->cliente[lc->qtnd] = cliente;
-  lc->qtnd += 1;
-
-  printf("\tDados cadastrados com sucesso!");
-  
-}
-
-void apagar_cliente(lista_clientes *lc) {
-  
-  char cpf_apagado[12];
-  scanf("%c", cpf_apagado);
-
-  for (int x; x < lc->qtnd; x++) {
-    if (strcmp(lc->cliente[x].cpf, cpf_apagado) == 0) {
-      for (; x < lc->qtnd; x++) {
-        strcpy(lc->cliente[x].nome, lc->cliente[x + 1].nome);
-        strcpy(lc->cliente[x].cpf, lc->cliente[x + 1].cpf);
-        strcpy(lc->cliente[x].tipo_conta, lc->cliente[x + 1].tipo_conta);
-        lc->cliente[x].saldo = lc->cliente[x + 1].saldo;
-        strcpy(lc->cliente[x].senha, lc->cliente[x + 1].senha);
-      }
-      lc->qtnd -= 1;
-    }
-    break;
+  if (tamanho_cpf != 11 || tamanho_tipo_conta != 1 ) {
+    printf("\tCPF e/ou tipo de conta inválidos.\n\n");
   }
-  printf("\tCliente apagado com sucesso!");
-  
-}
+  else {
+    strcpy(cliente.nome, nome);
+    strcpy(cliente.cpf, cpf);
+    strcpy(cliente.tipo_conta, tipo_conta);
+    cliente.saldo = saldo;
+    strcpy(cliente.senha, senha);
 
-void listar_clientes(lista_clientes *lc) {
+    lc->cliente[lc->qtnd] = cliente;
+    lc->qtnd += 1;
 
-  for (int x; x < lc->qtnd; x++) {
-    printf("\tNome: %s", lc->cliente[x].nome);
-    printf("\tCPF: %s", lc->cliente[x].cpf);
-    printf("\tTipo de conta: %s", lc->cliente[x].tipo_conta);
-    printf("\tSaldo: %f", lc->cliente[x].saldo);
-    printf("\tSenha: %s", lc->cliente[x].senha);
+    printf("\tDados cadastrados com sucesso!\n\n");
   }
   
 }
+

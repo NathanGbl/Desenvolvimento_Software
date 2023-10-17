@@ -9,7 +9,7 @@ typedef struct {
 } cliente;
 
 typedef struct {
-  cliente cliente[100];
+  cliente cliente[1000];
   int qtnd;
 } lista_clientes;
 
@@ -17,6 +17,3 @@ void menu(int *opcao);
 
 void novo_cliente(lista_clientes *lc);
 
-void apagar_cliente(lista_clientes *lc);
-
-void listar_clientes(lista_clientes *lc);

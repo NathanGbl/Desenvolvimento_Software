@@ -9,24 +9,10 @@ typedef struct {
 } cliente;
 
 typedef struct {
-  cliente cliente[1000];
+  cliente cliente[10];
   int qtnd;
 } lista_clientes;
 
-typedef struct {
-  char operacao[13];
-  float valor;
-} dados_extrato;
-
-typedef struct {
-  dados_extrato extrato[100];
-  int qtnd;
-} operacoes;
-
 void menu(int *opcao);
 
-void novo_cliente(lista_clientes *lc, operacoes *op);
-
-void deposito(lista_clientes *lc, operacoes *op);
-
-void extrato(lista_clientes *lc, operacoes *op);
+void novo_cliente(lista_clientes *lc);

@@ -2,26 +2,24 @@
 #include "lib.h"
 
 int main() {
-  
   int opcao;
   lista_clientes lc;
-  operacoes op;
   lc.qtnd = 0;
+  // le_bin(&lc);
+
   do {
     menu(&opcao);
     while (opcao > 9 || opcao < 0) {
       menu(&opcao);
     }
-    switch(opcao) {
-      case 1:
-        novo_cliente(&lc, &op);
-        break;
-      case 5:
-        deposito(&lc, &op);
-        break;
-      case 6:
-        extrato(&lc, &op);
-        break;
+  switch(opcao) {
+    case 1:
+      novo_cliente(&lc);
+      // salva_bin(&lc);
+      break;
+    case 0:
+      // salva_bin(&lc);
+      break;
     }
   } while (opcao != 0);
   

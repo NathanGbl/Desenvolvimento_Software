@@ -6,14 +6,14 @@ typedef struct {
   char tipo_conta[50];
   float saldo;
   char senha[101];
+  int qtnd;
 } cliente;
 
 typedef struct {
-  cliente cliente[1000];
+  cliente cliente[10];
   int qtnd;
 } lista_clientes;
 
 void menu(int *opcao);
 
 void novo_cliente(lista_clientes *lc);
-

@@ -21,7 +21,7 @@ void menu(int *opcao, int *cont) {
     printf("\n");
     *cont += 1;
   }
-  else { // Case o menu se repetir, não exibirá a mensagem "Bem vindo ao banco QuemPoupaTem!".
+  else { // Caso o menu se repetir, não exibirá a mensagem "Bem vindo ao banco QuemPoupaTem!".
     printf("Escolha uma das opções abaixo:\n");
     printf("1. Novo cliente\n");
     printf("2. Apagar cliente\n");

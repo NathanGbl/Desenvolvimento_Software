@@ -14,6 +14,6 @@ typedef struct {
   int qtnd;
 } lista_clientes;
 
-void menu(int *opcao);
+void menu(int *opcao, int *cont);
 
 void novo_cliente(lista_clientes *lc);

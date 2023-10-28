@@ -8,12 +8,12 @@ typedef struct {
   char senha[101];
   dados_extrato extrato[100];
   int qtnd;
-} cliente; 
+} cliente; // Criação do struct responsável por armazenar as informações do cliente.
 
 typedef struct {
   cliente cliente[1000];
   int qtnd;
-} lista_clientes; 
+} lista_clientes; // Criação do struct com a lista de todos os structs de cada cliente.
 
 void menu(int *opcao, int *cont);
 

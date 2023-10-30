@@ -139,6 +139,16 @@ void apagar_cliente(lista_clientes *lc) {
   }
   else {
     printf("\tCPF incorreto!\n\n"); // Exibi mensagem de erro.
+void listar_clientes(lista_clientes *lc) {
+
+  for (int x = 0; x < lc->qtnd; x++) {
+    // Loop que itera sobre os dados dos clientes dentro do lista_clientes e imprime as informações deles na tela.
+    printf("\n\tCliente %d\n", x);
+    printf("\t\tNome: %s\n", lc->cliente[x].nome);
+    printf("\t\tCPF: %s\n", lc->cliente[x].cpf);
+    printf("\t\tTipo de conta: %s\n", lc->cliente[x].tipo_conta);
+    printf("\t\tSaldo: R$%.2f\n", lc->cliente[x].saldo);
+    printf("\t\tSenha: %s\n\n", lc->cliente[x].senha);
   }
   
 }

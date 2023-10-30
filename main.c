@@ -20,6 +20,8 @@ int main() {
       break;
     case 2:
       apagar_cliente(&lc);
+    case 3:
+      listar_clientes(&lc);
       // salva_bin(&lc);
       break;
     case 0:

@@ -18,10 +18,12 @@ int main() {
       novo_cliente(&lc);
       // salva_bin(&lc);
       break;
-    case 2:
-      apagar_cliente(&lc);
-    case 3:
-      listar_clientes(&lc);
+    case 6:
+      extrato(&lc);
+      // salva_bin(&lc);
+      break;
+    case 7:
+      transf(&lc);
       // salva_bin(&lc);
       break;
     case 0:

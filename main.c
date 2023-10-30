@@ -18,6 +18,9 @@ int main() {
       novo_cliente(&lc);
       // salva_bin(&lc);
       break;
+    case 2:
+      apagar_cliente(&lc);
+      // salva_bin(&lc);
       break;
     case 0:
       salva_bin(&lc);

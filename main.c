@@ -18,10 +18,6 @@ int main() {
       novo_cliente(&lc);
       // salva_bin(&lc);
       break;
-    case 6:
-      extrato(&lc);
-      // salva_bin(&lc);
-      break;
     case 7:
       transf(&lc);
       // salva_bin(&lc);

@@ -24,16 +24,4 @@ void menu(int *opcao, int *cont);
 
 void novo_cliente(lista_clientes *lc);
 
-void extrato(lista_clientes *lc);
-
-void cria_arquivo(char *nome, FILE *f, char cpf[12]);
-
 void transf(lista_clientes *lc);
-
-void salva_bin(lista_clientes *lc);
-
-void le_bin(lista_clientes *lc);
-
-void cria_bin();
-
-int menu2();

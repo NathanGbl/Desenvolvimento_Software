@@ -18,6 +18,26 @@ int main() {
       novo_cliente(&lc);
       // salva_bin(&lc);
       break;
+    case 2:
+      apagar_cliente(&lc);
+      // salva_bin(&lc);
+      break;
+    case 3:
+      listar_clientes(&lc);
+      // salva_bin(&lc);
+      break;
+    case 4:
+      debito(&lc);
+      // salva_bin(&lc);
+      break;
+    case 5:
+      deposito(&lc);
+      // salva_bin(&lc);
+      break;
+    case 6:
+      extrato(&lc);
+      // salva_bin(&lc);
+      break;
     case 7:
       transf(&lc);
       // salva_bin(&lc);

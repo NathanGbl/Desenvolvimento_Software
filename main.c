@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "lib.h"
-// Feito por Nathan Gabriel da Fonseca Leite RA: 221230287 e Raphael Garavati RA: 221230147
+// Feito por Nathan Gabriel da Fonseca Leite RA: 221230287 e Raphael Garavati Erbert RA: 221230147
 
 int main() {
   int opcao;
